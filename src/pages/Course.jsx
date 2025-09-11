@@ -1,7 +1,11 @@
+import { useParams } from "react-router-dom";
+
 const Course = () => {
+    const { id } = useParams();
+
     return (
         <>
-            <h1>Course</h1>
+            <h1>Course Id: {id}</h1>
         </>
     );
 };
