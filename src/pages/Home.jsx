@@ -1,73 +1,57 @@
-import { useSelector, useDispatch } from "react-redux";
-import {
-    increment,
-    decrement,
-    reset,
-    incrementByAmount,
-} from "../redux/slices/counterSlice";
-import { useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCourses } from "../redux/slices/coursesSlice";
+import { Link } from "react-router-dom";
 
-const Home = () => {
-    const [selectedAmount, setSelectedAmount] = useState(3);
-
-    const count = useSelector((state) => state.counter.value);
+export default function Home() {
     const dispatch = useDispatch();
+    const {
+        list: courses,
+        status,
+        error,
+    } = useSelector((state) => state.courses);
+
+    useEffect(() => {
+        if (status === "idle") {
+            dispatch(fetchCourses());
+        }
+    }, [status, dispatch]);
+
+    if (status === "loading") {
+        return <p className="text-center text-gray-500">Loading courses...</p>;
+    }
+
+    if (status === "failed") {
+        return <p className="text-center text-red-500">Error: {error}</p>;
+    }
 
     return (
-        <>
-            <h1>Home</h1>
-            <div className="w-lg h-[400px] p-4 border bg-sky-50 mx-auto">
-                <div className="w-full flex gap-2 justify-center">
-                    <button
-                        onClick={() => {
-                            dispatch(increment());
-                        }}
-                    >
-                        Increment
-                    </button>
-                    <div className="w-1/2 text-center">{count}</div>
-                    <button
-                        onClick={() => {
-                            dispatch(decrement());
-                        }}
-                    >
-                        Decrement
-                    </button>
-                </div>
-                <div className="w-full flex gap-2 justify-between">
-                    <button
-                        onClick={() => {
-                            dispatch(reset());
-                        }}
-                    >
-                        Reset
-                    </button>
-                    <div className="flex">
-                        <select
-                            name="amount"
-                            value={selectedAmount}
-                            onChange={(e) =>
-                                setSelectedAmount(Number(e.target.value))
-                            }
-                        >
-                            {Array.from({ length: 6 }, (_, i) => (
-                                <option key={i} value={i}>
-                                    {i}
-                                </option>
-                            ))}
-                        </select>
-                        <button
-                            onClick={() => {
-                                dispatch(incrementByAmount(selectedAmount));
-                            }}
-                        >
-                            incrementByAmount
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
-};
+        <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-center">
+                Available Courses
+            </h1>
 
-export default Home;
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+                {courses.map((course) => (
+                    <div
+                        key={course.id}
+                        className="border rounded-xl p-4 shadow hover:shadow-lg transition"
+                    >
+                        <h2 className="text-xl font-semibold mb-2">
+                            {course.title}
+                        </h2>
+                        <p className="text-gray-600 text-sm mb-4">
+                            {course.description?.slice(0, 80)}...
+                        </p>
+                        <Link
+                            to={`/course/${course.id}`}
+                            className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                        >
+                            View Course
+                        </Link>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}

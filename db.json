@@ -1,0 +1,106 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "title": "React for Vue Devs",
+            "description": "Learn React with Vue comparisons",
+            "lessons": [
+                {
+                    "id": "l1",
+                    "title": "Intro",
+                    "videoUrl": "https://www.youtube.com/watch?v=ysz5S6PUM-U"
+                },
+                {
+                    "id": "l2",
+                    "title": "JSX & Components",
+                    "videoUrl": "https://www.youtube.com/watch?v=ysz5S6PUM-U"
+                },
+                {
+                    "id": "l3",
+                    "title": "Props & State",
+                    "videoUrl": "https://www.youtube.com/watch?v=35lXWvCuM8o"
+                },
+                {
+                    "id": "l4",
+                    "title": "Handling Events",
+                    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                },
+                {
+                    "id": "l5",
+                    "title": "Conditional Rendering",
+                    "videoUrl": "https://www.youtube.com/watch?v=4UZrsTqkcW4"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Node.js for Python Devs",
+            "description": "Transition from Python backend to Node.js",
+            "lessons": [
+                {
+                    "id": "l1",
+                    "title": "Intro to Node.js",
+                    "videoUrl": "https://www.youtube.com/watch?v=TlB_eWDSMt4"
+                },
+                {
+                    "id": "l2",
+                    "title": "Express Basics",
+                    "videoUrl": "https://www.youtube.com/watch?v=L72fhGm1tfE"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Docker for Beginners",
+            "description": "Learn containerization step by step",
+            "lessons": [
+                {
+                    "id": "l1",
+                    "title": "What is Docker?",
+                    "videoUrl": "https://www.youtube.com/watch?v=pTFZFxd4hOI"
+                },
+                {
+                    "id": "l2",
+                    "title": "Building Your First Image",
+                    "videoUrl": "https://www.youtube.com/watch?v=3c-iBn73dDE"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "TypeScript for JavaScript Devs",
+            "description": "Add types to your JavaScript projects",
+            "lessons": [
+                {
+                    "id": "l1",
+                    "title": "Why TypeScript?",
+                    "videoUrl": "https://www.youtube.com/watch?v=gp5H0Vw39yw"
+                },
+                {
+                    "id": "l2",
+                    "title": "Types & Interfaces",
+                    "videoUrl": "https://www.youtube.com/watch?v=zQnBQ4tB3ZA"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Next.js Crash Course",
+            "description": "Learn server-side rendering with React",
+            "lessons": [
+                {
+                    "id": "l1",
+                    "title": "Next.js Basics",
+                    "videoUrl": "https://www.youtube.com/watch?v=1WmNXEVia8I"
+                },
+                {
+                    "id": "l2",
+                    "title": "Pages & Routing",
+                    "videoUrl": "https://www.youtube.com/watch?v=tt3PUvhOVzo"
+                }
+            ]
+        }
+    ],
+
+    "auth": []
+}
