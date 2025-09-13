@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { getCourses } from "../../api/coursesApi";
 
 export const fetchCourses = createAsyncThunk(
     "courses/fetchCourses",
     async () => {
-        const res = await axios.get("http://localhost:4000/courses");
+        const res = await getCourses();
         return res.data;
     }
 );

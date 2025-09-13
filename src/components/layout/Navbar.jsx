@@ -1,20 +1,23 @@
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
-    const { user } = useSelector((state) => state.user);
+    const { isAuthenticated, signOut } = useAuth();
 
     return (
         <>
             <nav className="flex gap-2">
                 <Link to="/">Home</Link>
-                {user === null ? (
+                {isAuthenticated ? (
+                    <>
+                        <Link to="dashboard">Dashboard</Link>
+                        <button onClick={signOut}>Logout</button>
+                    </>
+                ) : (
                     <>
                         <Link to="login">Login</Link>
                         <Link to="register">Register</Link>
                     </>
-                ) : (
-                    <Link to="dashboard">Dashboard</Link>
                 )}
             </nav>
         </>

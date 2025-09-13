@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCourses } from "../redux/slices/coursesSlice";
+import { fetchCourses } from "../features/courses/coursesSlice";
 import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -10,6 +11,7 @@ export default function Home() {
         status,
         error,
     } = useSelector((state) => state.courses);
+    const { user, isAuthenticated } = useAuth();
 
     useEffect(() => {
         if (status === "idle") {
@@ -27,6 +29,13 @@ export default function Home() {
 
     return (
         <div className="space-y-6">
+            {isAuthenticated ? (
+                <>
+                    <p className="text-center text-2xl">Wellcome {user.name}</p>
+                </>
+            ) : (
+                <></>
+            )}
             <h1 className="text-3xl font-bold text-center">
                 Available Courses
             </h1>

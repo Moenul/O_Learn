@@ -2,8 +2,8 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import { fetchCourses } from "../redux/slices/coursesSlice";
-import { markLessonComplete } from "../redux/slices/userSlice";
+import { fetchCourses } from "../features/courses/coursesSlice";
+import { markLessonComplete } from "../features/auth/userSlice";
 
 export default function Course() {
     const { id } = useParams();
