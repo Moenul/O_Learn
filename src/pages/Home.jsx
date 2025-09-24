@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourses } from "../features/courses/coursesSlice";
-import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import CourseCard from "../components/CourseCard";
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -31,7 +31,7 @@ export default function Home() {
         <div className="space-y-6">
             {isAuthenticated ? (
                 <>
-                    <p className="text-center text-2xl">Wellcome {user.name}</p>
+                    <p className="text-center text-2xl">Welcome {user.name}</p>
                 </>
             ) : (
                 <></>
@@ -41,26 +41,14 @@ export default function Home() {
             </h1>
 
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-                {courses.map((course) => (
-                    <div
-                        key={course.id}
-                        className="border rounded-xl p-4 shadow hover:shadow-lg transition"
-                    >
-                        <h2 className="text-xl font-semibold mb-2">
-                            {course.title}
-                        </h2>
-                        <p className="text-gray-600 text-sm mb-4">
-                            {course.description?.slice(0, 80)}...
-                        </p>
-                        <Link
-                            to={`/course/${course.id}`}
-                            className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-                        >
-                            View Course
-                        </Link>
-                    </div>
+                {courses?.map((course) => (
+                    <CourseCard key={course.id} course={course} />
                 ))}
             </div>
         </div>
     );
 }
+
+// useCallback function pass
+// useMemo  variable  expensive calculation
+// Memoization React.memo child component export default React.memo(Home);

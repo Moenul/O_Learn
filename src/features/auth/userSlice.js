@@ -32,7 +32,7 @@ const userSlice = createSlice({
         },
         markLessonComplete: (state, action) => {
             const { courseId, lessonId } = action.payload;
-            state.progress[courseId] = state.progress[courseId] | [];
+            state.progress[courseId] = state.progress[courseId] || [];
             if (!state.progress[courseId].includes(lessonId))
                 state.progress[courseId].push(lessonId);
         },
