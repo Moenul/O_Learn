@@ -1,4 +1,4 @@
-export default function CourseList(props) {
+export default function LessonList(props) {
     const { course, progress, currentLesson, setCurrentLesson } = props;
 
     // Check if a lesson is unlocked

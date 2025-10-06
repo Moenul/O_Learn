@@ -9,8 +9,8 @@ export default function Login() {
 
     const { user, status, error } = useSelector((state) => state.user);
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("test@test.com");
+    const [password, setPassword] = useState("1234");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -31,7 +31,7 @@ export default function Login() {
     }, [user]);
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <div className="px-4 py-4 max-w-6xl mx-auto flex items-center justify-center min-h-screen bg-gray-100">
             <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-6">
                 <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">

@@ -27,8 +27,13 @@ const userSlice = createSlice({
             state.progress = {};
         },
         enrollCourse: (state, action) => {
-            if (!state.enrolled.includes(action.payload))
+            if (
+                !state.enrolled.some(
+                    (course) => course.id === action.payload.id
+                )
+            ) {
                 state.enrolled.push(action.payload);
+            }
         },
         markLessonComplete: (state, action) => {
             const { courseId, lessonId } = action.payload;

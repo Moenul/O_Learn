@@ -28,7 +28,7 @@ export default function Home() {
     }
 
     return (
-        <div className="space-y-6">
+        <div className="px-4 py-4 pt-20 max-w-6xl mx-auto space-y-6">
             {isAuthenticated ? (
                 <>
                     <p className="text-center text-2xl">Welcome {user.name}</p>

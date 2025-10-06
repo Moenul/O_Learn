@@ -10,7 +10,9 @@ import ErrorPage from "../pages/ErrorPage";
 
 // Dashboard Pages
 import DashboardLayout from "../layouts/dashboardLayut/dashboardLayout";
-import Dashboard from "../pages/Dashboard";
+import Dashboard from "../pages/Dashboard/Index";
+import Profile from "../pages/Dashboard/Profile/Index";
+import Learn from "../pages/Dashboard/Learn/Index";
 
 const router = createBrowserRouter([
     {
@@ -33,7 +35,20 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard",
                 element: <DashboardLayout />,
-                children: [{ path: "/dashboard", element: <Dashboard /> }],
+                children: [
+                    {
+                        path: "",
+                        element: <Dashboard />,
+                    },
+                    {
+                        path: "learn/:id",
+                        element: <Learn />,
+                    },
+                    {
+                        path: "manage-profile",
+                        element: <Profile />,
+                    },
+                ],
             },
         ],
     },
