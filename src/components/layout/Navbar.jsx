@@ -6,7 +6,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="w-full fixed top-0 px-4 py-4 bg-white/80 backdrop-blur border border-slate-300">
+            <nav className="w-full fixed top-0 z-[999] px-4 py-4 bg-white/80 backdrop-blur border-b border-slate-200">
                 <div className="px-4 max-w-6xl mx-auto flex gap-2 ">
                     <Link to="/">Home</Link>
                     {isAuthenticated ? (

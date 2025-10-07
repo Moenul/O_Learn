@@ -55,7 +55,7 @@ export default function Course() {
                         <div className="preview-card w-80 absolute z-10 top-0 left-1/2 transform -translate-x-1/2 p-2 border rounded-sm space-y-2 bg-white/80 backdrop-blur ">
                             <div className="intro-video w-full aspect-video rounded-sm overflow-hidden">
                                 <ReactPlayer
-                                    src={course.lessons[0].videoUrl}
+                                    src={course.modules[0].lectures[0].videoUrl}
                                     width="100%"
                                     height="100%"
                                     controls
@@ -113,8 +113,26 @@ export default function Course() {
                             <h2 className="text-2xl font-semibold">
                                 Course Curriculum
                             </h2>
-                            {course.lessons.map((lesson) => {
-                                return <div>{lesson.title}</div>;
+                            {course.modules.map((module) => {
+                                return (
+                                    <div>
+                                        <div>
+                                            <p>{module.title}</p>
+
+                                            <ul className="pl-3">
+                                                {module.lectures.map(
+                                                    (lecture) => {
+                                                        return (
+                                                            <li>
+                                                                {lecture.title}
+                                                            </li>
+                                                        );
+                                                    }
+                                                )}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                );
                             })}
                         </div>
                     </div>

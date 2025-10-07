@@ -6,7 +6,7 @@ import Home from "../pages/Home";
 import Course from "../pages/Course";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import ErrorPage from "../pages/ErrorPage";
+// import ErrorPage from "../pages/ErrorPage";
 
 // Dashboard Pages
 import DashboardLayout from "../layouts/dashboardLayut/dashboardLayout";
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <App />,
-        errorElement: <ErrorPage />,
+        // errorElement: <ErrorPage />,
         children: [
             // Main Layout
             {

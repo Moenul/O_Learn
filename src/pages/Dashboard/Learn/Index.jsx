@@ -2,8 +2,8 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchCourses } from "../../../features/courses/coursesSlice";
-import { markLessonComplete } from "../../../features/auth/userSlice";
-import LessonList from "../../../components/LessonList";
+import { markLectureComplete } from "../../../features/auth/userSlice";
+import LectureList from "../../../components/LectureList";
 import VideoPlayer from "../../../components/VideoPlayer";
 import Navbar from "../../../components/layout/Navbar";
 
@@ -14,7 +14,7 @@ const Learn = () => {
     const { list: courses, status } = useSelector((state) => state.courses);
     const userProgress = useSelector((state) => state.user.progress);
 
-    const [currentLesson, setCurrentLesson] = useState(null);
+    const [currentLecture, setCurrentLecture] = useState(null);
 
     // Fetch courses if not already loaded
     useEffect(() => {
@@ -26,10 +26,10 @@ const Learn = () => {
     // Find the selected course
     const course = courses.find((c) => String(c.id) === String(id));
 
-    // Select the first lesson by default
+    // Select the first lecture by default
     useEffect(() => {
-        if (course && course.lessons?.length > 0) {
-            setCurrentLesson(course.lessons[0]);
+        if (course && course.modules?.length > 0) {
+            setCurrentLecture(course.modules[0].lectures[0]);
         }
     }, [course]);
 
@@ -40,14 +40,13 @@ const Learn = () => {
     }
 
     const progress = userProgress[course.id] || [];
-
-    // Handle lesson complete
-    const handleLessonComplete = () => {
-        if (currentLesson) {
+    // Handle markLectureComplete complete
+    const handleLectureComplete = () => {
+        if (currentLecture) {
             dispatch(
-                markLessonComplete({
+                markLectureComplete({
                     courseId: course.id,
-                    lessonId: currentLesson.id,
+                    lectureId: currentLecture.id,
                 })
             );
         }
@@ -56,22 +55,25 @@ const Learn = () => {
     return (
         <>
             <Navbar />
-            <div className="px-4 py-4 pt-16 max-w-6xl mx-auto flex flex-col md:flex-row gap-6">
-                {/* Sidebar - Lesson List */}
-                <LessonList
+            <div className="px-4 py-4 pt-16 max-w-6xl mx-auto ">
+                {/* Video Player */}
+                <section className="max-w-4xl mx-auto flex-1">
+                    <VideoPlayer
+                        currentLecture={currentLecture}
+                        handleLectureComplete={handleLectureComplete}
+                    ></VideoPlayer>
+                    <h3 className="text-2xl font-semibold">
+                        {currentLecture?.title}
+                    </h3>
+                </section>
+
+                {/* Sidebar - Lecture List */}
+                <LectureList
                     course={course}
                     progress={progress}
-                    currentLesson={currentLesson}
-                    setCurrentLesson={setCurrentLesson}
-                ></LessonList>
-
-                {/* Video Player */}
-                <section className="flex-1">
-                    <VideoPlayer
-                        currentLesson={currentLesson}
-                        handleLessonComplete={handleLessonComplete}
-                    ></VideoPlayer>
-                </section>
+                    currentLecture={currentLecture}
+                    setCurrentLecture={setCurrentLecture}
+                ></LectureList>
             </div>
         </>
     );

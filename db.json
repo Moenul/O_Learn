@@ -2,103 +2,299 @@
     "courses": [
         {
             "id": 1,
-            "title": "React for Vue Devs",
-            "description": "Learn React with Vue comparisons",
-            "lessons": [
+            "title": "React for Vue Developers",
+            "shortDescription": "Master React by comparing it to Vue — perfect for Vue developers transitioning to React.",
+            "longDescription": "This course helps experienced Vue developers understand React concepts like components, JSX, props, and hooks by drawing parallels with Vue’s reactivity and composition API.",
+            "thumbnail": "https://example.com/thumbnails/react-for-vue-devs.jpg",
+            "category": "Frontend Development",
+            "level": "Intermediate",
+            "language": "English",
+            "duration": "6h 45m",
+            "rating": 4.8,
+            "reviewsCount": 245,
+            "studentsEnrolled": 3120,
+            "price": 49.99,
+            "discountPrice": 29.99,
+            "tags": [
+                "React",
+                "Vue",
+                "Frontend",
+                "JavaScript",
+                "Framework Transition"
+            ],
+
+            "instructors": [
                 {
-                    "id": "l1",
-                    "title": "Intro",
-                    "videoUrl": "https://youtu.be/wV-IYBqODzY?si=pghV8QixK8MCsR2f"
+                    "id": "i1",
+                    "name": "Sarah Thompson",
+                    "title": "Senior Frontend Engineer at Meta",
+                    "avatar": "https://example.com/instructors/sarah.jpg"
                 },
                 {
-                    "id": "l2",
-                    "title": "JSX & Components",
-                    "videoUrl": "https://www.youtube.com/watch?v=ysz5S6PUM-U"
-                },
-                {
-                    "id": "l3",
-                    "title": "Props & State",
-                    "videoUrl": "https://www.youtube.com/watch?v=35lXWvCuM8o"
-                },
-                {
-                    "id": "l4",
-                    "title": "Handling Events",
-                    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                },
-                {
-                    "id": "l5",
-                    "title": "Conditional Rendering",
-                    "videoUrl": "https://www.youtube.com/watch?v=4UZrsTqkcW4"
+                    "id": "i2",
+                    "name": "Mark Lee",
+                    "title": "Tech Lead at Google",
+                    "avatar": "https://example.com/instructors/mark.jpg"
                 }
-            ]
+            ],
+
+            "modules": [
+                {
+                    "id": "m1",
+                    "title": "Getting Started",
+                    "description": "Introduction and environment setup for React and comparison with Vue basics.",
+                    "lectures": [
+                        {
+                            "id": "l1",
+                            "title": "Course Overview",
+                            "videoUrl": "https://youtu.be/VldVWN2i710?si=0laOTXR1qxzQgSFZ",
+                            "duration": "05:34",
+                            "isPreview": true
+                        },
+                        {
+                            "id": "l2",
+                            "title": "React vs Vue Concepts",
+                            "videoUrl": "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+                            "duration": "12:10",
+                            "isPreview": false
+                        }
+                    ]
+                },
+                {
+                    "id": "m2",
+                    "title": "Core React Concepts",
+                    "description": "Learn JSX, components, and state management compared to Vue.",
+                    "lectures": [
+                        {
+                            "id": "l3",
+                            "title": "JSX Deep Dive",
+                            "videoUrl": "https://example.com/videos/jsx-deep-dive.mp4",
+                            "duration": "15:45",
+                            "isPreview": false
+                        },
+                        {
+                            "id": "l4",
+                            "title": "Props & State in React",
+                            "videoUrl": "https://example.com/videos/props-state.mp4",
+                            "duration": "17:32",
+                            "isPreview": false
+                        }
+                    ]
+                }
+            ],
+
+            "createdAt": "2025-09-15T10:30:00Z",
+            "updatedAt": "2025-10-01T14:20:00Z"
         },
         {
             "id": 2,
-            "title": "Node.js for Python Devs",
-            "description": "Transition from Python backend to Node.js",
-            "lessons": [
+            "title": "Node.js Backend Masterclass",
+            "shortDescription": "Build scalable backend APIs using Node.js, Express, and MongoDB.",
+            "longDescription": "Learn modern backend development by building RESTful APIs, handling authentication, and deploying Node.js apps to production.",
+            "thumbnail": "https://example.com/thumbnails/nodejs-backend.jpg",
+            "category": "Backend Development",
+            "level": "Advanced",
+            "language": "English",
+            "duration": "9h 30m",
+            "rating": 4.7,
+            "reviewsCount": 520,
+            "studentsEnrolled": 8700,
+            "price": 69.99,
+            "discountPrice": 39.99,
+            "tags": ["Node.js", "API", "MongoDB", "Express", "Backend"],
+
+            "instructors": [
                 {
-                    "id": "l1",
-                    "title": "Intro to Node.js",
-                    "videoUrl": "https://www.youtube.com/watch?v=TlB_eWDSMt4"
-                },
-                {
-                    "id": "l2",
-                    "title": "Express Basics",
-                    "videoUrl": "https://www.youtube.com/watch?v=L72fhGm1tfE"
+                    "id": "i3",
+                    "name": "David Kim",
+                    "title": "Backend Architect at Netflix",
+                    "avatar": "https://example.com/instructors/david.jpg"
                 }
-            ]
+            ],
+
+            "modules": [
+                {
+                    "id": "m1",
+                    "title": "Introduction to Node.js",
+                    "description": "Overview and setup for Node.js environment.",
+                    "lectures": [
+                        {
+                            "id": "l1",
+                            "title": "Why Node.js?",
+                            "videoUrl": "https://youtu.be/2YIgGdUtbXM?si=-LF9K8BSQjkhQnq8",
+                            "duration": "06:10",
+                            "isPreview": true
+                        },
+                        {
+                            "id": "l2",
+                            "title": "Setting up Express",
+                            "videoUrl": "https://example.com/videos/express-setup.mp4",
+                            "duration": "14:25",
+                            "isPreview": false
+                        }
+                    ]
+                }
+            ],
+            "createdAt": "2025-08-20T09:00:00Z",
+            "updatedAt": "2025-09-12T18:00:00Z"
         },
         {
             "id": 3,
-            "title": "Docker for Beginners",
-            "description": "Learn containerization step by step",
-            "lessons": [
+            "title": "Fullstack with MERN",
+            "shortDescription": "Build modern web applications using MongoDB, Express, React, and Node.",
+            "longDescription": "From frontend to backend, learn how to create and deploy complete applications using the MERN stack.",
+            "thumbnail": "https://example.com/thumbnails/mern-fullstack.jpg",
+            "category": "Fullstack Development",
+            "level": "Intermediate",
+            "language": "English",
+            "duration": "12h 15m",
+            "rating": 4.9,
+            "reviewsCount": 390,
+            "studentsEnrolled": 5400,
+            "price": 79.99,
+            "discountPrice": 49.99,
+            "tags": ["MERN", "Fullstack", "React", "Node.js", "MongoDB"],
+
+            "instructors": [
                 {
-                    "id": "l1",
-                    "title": "What is Docker?",
-                    "videoUrl": "https://www.youtube.com/watch?v=pTFZFxd4hOI"
+                    "id": "i4",
+                    "name": "Emma Williams",
+                    "title": "Software Engineer at Amazon",
+                    "avatar": "https://example.com/instructors/emma.jpg"
                 },
                 {
-                    "id": "l2",
-                    "title": "Building Your First Image",
-                    "videoUrl": "https://www.youtube.com/watch?v=3c-iBn73dDE"
+                    "id": "i5",
+                    "name": "Alex Johnson",
+                    "title": "Fullstack Developer at Stripe",
+                    "avatar": "https://example.com/instructors/alex.jpg"
                 }
-            ]
+            ],
+
+            "modules": [],
+            "createdAt": "2025-07-10T10:00:00Z",
+            "updatedAt": "2025-09-02T14:00:00Z"
         },
         {
             "id": 4,
-            "title": "TypeScript for JavaScript Devs",
-            "description": "Add types to your JavaScript projects",
-            "lessons": [
+            "title": "UI/UX Design Fundamentals",
+            "shortDescription": "Learn how to design beautiful and user-friendly interfaces.",
+            "longDescription": "This beginner course teaches you design principles, color theory, typography, and UX research.",
+            "thumbnail": "https://example.com/thumbnails/uiux.jpg",
+            "category": "Design",
+            "level": "Beginner",
+            "language": "English",
+            "duration": "5h 20m",
+            "rating": 4.6,
+            "reviewsCount": 600,
+            "studentsEnrolled": 9100,
+            "price": 39.99,
+            "discountPrice": 24.99,
+            "tags": ["UI", "UX", "Design", "Figma"],
+
+            "instructors": [
                 {
-                    "id": "l1",
-                    "title": "Why TypeScript?",
-                    "videoUrl": "https://www.youtube.com/watch?v=gp5H0Vw39yw"
-                },
-                {
-                    "id": "l2",
-                    "title": "Types & Interfaces",
-                    "videoUrl": "https://www.youtube.com/watch?v=zQnBQ4tB3ZA"
+                    "id": "i6",
+                    "name": "Nina Roberts",
+                    "title": "Lead Designer at Dribbble",
+                    "avatar": "https://example.com/instructors/nina.jpg"
                 }
-            ]
+            ],
+            "modules": [],
+            "createdAt": "2025-05-22T09:45:00Z",
+            "updatedAt": "2025-07-10T19:15:00Z"
         },
         {
             "id": 5,
-            "title": "Next.js Crash Course",
-            "description": "Learn server-side rendering with React",
-            "lessons": [
+            "title": "Python for Data Science",
+            "shortDescription": "Analyze and visualize data using Python libraries like Pandas, NumPy, and Matplotlib.",
+            "longDescription": "A practical course to learn data analysis, cleaning, and visualization with Python.",
+            "thumbnail": "https://example.com/thumbnails/python-data.jpg",
+            "category": "Data Science",
+            "level": "Intermediate",
+            "language": "English",
+            "duration": "8h 10m",
+            "rating": 4.8,
+            "reviewsCount": 810,
+            "studentsEnrolled": 12500,
+            "price": 59.99,
+            "discountPrice": 34.99,
+            "tags": ["Python", "Data Science", "Machine Learning"],
+
+            "instructors": [
                 {
-                    "id": "l1",
-                    "title": "Next.js Basics",
-                    "videoUrl": "https://www.youtube.com/watch?v=1WmNXEVia8I"
+                    "id": "i7",
+                    "name": "Dr. Rahul Mehta",
+                    "title": "Data Scientist at IBM",
+                    "avatar": "https://example.com/instructors/rahul.jpg"
+                }
+            ],
+            "modules": [],
+            "createdAt": "2025-03-15T08:00:00Z",
+            "updatedAt": "2025-09-01T17:20:00Z"
+        },
+        {
+            "id": 6,
+            "title": "Vue 3 Mastery",
+            "shortDescription": "Deep dive into Vue 3 Composition API, reactivity, and advanced component design.",
+            "longDescription": "Become a Vue 3 expert with real-world examples and advanced reactive patterns.",
+            "thumbnail": "https://example.com/thumbnails/vue3.jpg",
+            "category": "Frontend Development",
+            "level": "Advanced",
+            "language": "English",
+            "duration": "7h 30m",
+            "rating": 4.9,
+            "reviewsCount": 470,
+            "studentsEnrolled": 6700,
+            "price": 64.99,
+            "discountPrice": 39.99,
+            "tags": ["Vue", "Frontend", "Composition API"],
+
+            "instructors": [
+                {
+                    "id": "i8",
+                    "name": "Hiro Tanaka",
+                    "title": "Senior Frontend Engineer at GitLab",
+                    "avatar": "https://example.com/instructors/hiro.jpg"
+                }
+            ],
+            "modules": [],
+            "createdAt": "2025-08-05T13:30:00Z",
+            "updatedAt": "2025-09-20T09:00:00Z"
+        },
+        {
+            "id": 7,
+            "title": "DevOps with Docker and Kubernetes",
+            "shortDescription": "Learn containerization and orchestration from scratch using Docker and Kubernetes.",
+            "longDescription": "Master the tools used by modern DevOps engineers to deploy and manage applications at scale.",
+            "thumbnail": "https://example.com/thumbnails/devops.jpg",
+            "category": "DevOps",
+            "level": "Intermediate",
+            "language": "English",
+            "duration": "10h 50m",
+            "rating": 4.7,
+            "reviewsCount": 560,
+            "studentsEnrolled": 4200,
+            "price": 79.99,
+            "discountPrice": 49.99,
+            "tags": ["Docker", "Kubernetes", "DevOps", "CI/CD"],
+
+            "instructors": [
+                {
+                    "id": "i9",
+                    "name": "Carlos Fernandez",
+                    "title": "DevOps Lead at Spotify",
+                    "avatar": "https://example.com/instructors/carlos.jpg"
                 },
                 {
-                    "id": "l2",
-                    "title": "Pages & Routing",
-                    "videoUrl": "https://www.youtube.com/watch?v=tt3PUvhOVzo"
+                    "id": "i10",
+                    "name": "Jane Liu",
+                    "title": "Cloud Engineer at AWS",
+                    "avatar": "https://example.com/instructors/jane.jpg"
                 }
-            ]
+            ],
+            "modules": [],
+            "createdAt": "2025-06-25T11:10:00Z",
+            "updatedAt": "2025-09-15T15:40:00Z"
         }
     ],
     "users": [

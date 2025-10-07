@@ -17,7 +17,7 @@ const userSlice = createSlice({
         status: "idle",
         error: null,
         enrolled: [],
-        progress: {},
+        progress: { 2: ["l1"] },
     },
     reducers: {
         logout: (state) => {
@@ -35,11 +35,11 @@ const userSlice = createSlice({
                 state.enrolled.push(action.payload);
             }
         },
-        markLessonComplete: (state, action) => {
-            const { courseId, lessonId } = action.payload;
+        markLectureComplete: (state, action) => {
+            const { courseId, lectureId } = action.payload;
             state.progress[courseId] = state.progress[courseId] || [];
-            if (!state.progress[courseId].includes(lessonId))
-                state.progress[courseId].push(lessonId);
+            if (!state.progress[courseId].includes(lectureId))
+                state.progress[courseId].push(lectureId);
         },
         registerUser: (state, action) => {
             state.user = action.payload;
@@ -63,7 +63,7 @@ const userSlice = createSlice({
     },
 });
 
-export const { logout, enrollCourse, markLessonComplete, registerUser } =
+export const { logout, enrollCourse, markLectureComplete, registerUser } =
     userSlice.actions;
 
 export default userSlice.reducer;
