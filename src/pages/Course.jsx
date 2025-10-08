@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchCourses } from "../features/courses/coursesSlice";
@@ -55,7 +55,9 @@ export default function Course() {
                         <div className="preview-card w-80 absolute z-10 top-0 left-1/2 transform -translate-x-1/2 p-2 border rounded-sm space-y-2 bg-white/80 backdrop-blur ">
                             <div className="intro-video w-full aspect-video rounded-sm overflow-hidden">
                                 <ReactPlayer
-                                    src={course.modules[0].lectures[0].videoUrl}
+                                    src={
+                                        course.modules[0]?.lectures[0]?.videoUrl
+                                    }
                                     width="100%"
                                     height="100%"
                                     controls
@@ -84,9 +86,12 @@ export default function Course() {
 
                             {isAuthenticated &&
                             userEnrolled.some((crs) => crs.id === course.id) ? (
-                                <button className="flex items-center justify-center w-full px-6 py-2 rounded-sm font-semibold text-lg bg-purple-400 cursor-pointer">
+                                <Link
+                                    to={`/dashboard/learn/${course.id}`}
+                                    className="flex items-center justify-center w-full px-6 py-2 rounded-sm font-semibold text-lg bg-purple-400 cursor-pointer"
+                                >
                                     Watch Now
-                                </button>
+                                </Link>
                             ) : (
                                 <button
                                     onClick={() => handleEnrollCourse(course)}
@@ -120,7 +125,7 @@ export default function Course() {
                                             <p>{module.title}</p>
 
                                             <ul className="pl-3">
-                                                {module.lectures.map(
+                                                {module?.lectures?.map(
                                                     (lecture) => {
                                                         return (
                                                             <li>
